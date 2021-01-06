@@ -45,12 +45,12 @@
         </div>
     </div>
 
-    <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+    <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; precision: medium;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
-            <a-entity position="0 0 10" rotation="0 0 0" scale="0.1 0.1 0.1">
+            <a-entity position="0 0 -10" rotation="0 0 0" scale="0.1 0.1 0.1">
                 <a-entity position="0 0 -10" rotation="0 0 0" scale="0.1 0.1 0.1" gltf-model="url(models/bees.gltf)"
                     animation-mixer="clip: *">
                 </a-entity>
@@ -66,7 +66,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 4");
+        alert("Versão 5");
     </script>
 </body>
 

@@ -23,9 +23,6 @@
 <body>
   <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-    <a-assets>
-    </a-assets>
-
     <a-marker preset="hiro" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
       <a-entity visible="true" id="screen" rotation="-90 360 0">
         <a-entity position="0 0 0" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">

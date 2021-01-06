@@ -57,10 +57,13 @@
                 <a-entity position="0 0 -10" rotation="0 0 0" gltf-model="url(models/bees.gltf)"
                     animation-mixer="clip: *">
                 </a-entity>
-                
-                <a-entity position="0 0 -10"
-                    sprite-particles="texture: img/star.png; velocity: .1 1 .1; radialVelocity: 1..2;"></a-entity>
             </a-entity>
+
+            <a-gltf-model id="model" texture="img/star.png" scale="0.1 0.1 0.1" visible="false"></a-gltf-model>
+            <a-entity position="0 5 -5"
+                sprite-particles="texture: img/star.png; velocity: .1 1 .1; acceleration: 0 -1 0..0 -2 0; color: red,yellow">
+            </a-entity>
+            <a-entity position="0 0 -5" sprite-particles="texture: img/star.png; velocity: .1 1 .1; radialVelocity: 1..2; color: red"></a-entity>
         </a-entity>
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
@@ -72,7 +75,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 1");
+        alert("Versão 2");
     </script>
 </body>
 

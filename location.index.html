@@ -53,17 +53,19 @@
 
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
-            <a-entity position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01">
-                <a-entity position="0 0 -10" rotation="0 0 0" gltf-model="url(models/bees.gltf)"
+            <a-entity position="0 0 -10" rotation="0 0 0">
+                <a-entity position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)"
                     animation-mixer="clip: *">
                 </a-entity>
             </a-entity>
 
             <a-gltf-model id="model" texture="img/star.png" scale="0.1 0.1 0.1" visible="false"></a-gltf-model>
             <a-entity position="0 5 -5"
-                sprite-particles="texture: img/star.png; velocity: .1 1 .1; acceleration: 0 -1 0..0 -2 0; color: red,yellow">
+                sprite-particles="texture: img/star.png; velocity: .1 1 .1; acceleration: 0 -1 0..0 -2 0; color: white">
             </a-entity>
-            <a-entity position="0 0 -5" sprite-particles="texture: img/star.png; velocity: .1 1 .1; radialVelocity: 1..2; color: red"></a-entity>
+            <a-entity position="0 0 0"
+                sprite-particles="texture: img/star.png; velocity: .1 1 .1; radialVelocity: 1..2; color: white">
+            </a-entity>
         </a-entity>
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
@@ -71,11 +73,11 @@
             cursor="fuse: true; rayOrigin: mouse;">
         </a-entity>
 
-        <!-- <a-light type="ambient" color="#FFF" intensity="1"></a-light> -->
+        <a-light type="ambient" color="#FFF" intensity="2"></a-light>
     </a-scene>
 
     <script>
-        alert("Versão 2");
+        alert("Versão 3");
     </script>
 </body>
 

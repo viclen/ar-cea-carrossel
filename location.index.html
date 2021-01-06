@@ -27,7 +27,7 @@
             });
         };
 
-        alert("Versão 1");
+        alert("Versão 2");
     </script>
 
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -56,11 +56,11 @@
         precision: low;
         maxCanvasWidth: 1024;
         maxCanvasHeight: 1024;">
-        
+
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
-            <a-entity position="0 0 -1" rotation="0 0 0" scale="0.1 0.1 0.1">
-                <a-entity gltf-model="url(models/bees.gltf)">
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1">
+                <a-entity gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
                 </a-entity>
             </a-entity>
         </a-entity>

@@ -36,6 +36,12 @@ function showScreen(name) {
 
 let enableParticles = true;
 
+document.addEventListener("click", () => {
+    enableParticles = !enableParticles;
+    alert((enableParticles ? "Com" : "Sem") + " partículas.");
+    document.getElementById("particles").setAttribute("sprite-particles", { enable: enableParticles });
+});
+
 AFRAME.registerComponent('ar-scene', {
     init: function () {
         if (!window.mobileCheck()) {
@@ -52,13 +58,6 @@ AFRAME.registerComponent('ar-scene', {
         clickToStart.addEventListener('click', () => {
             getLocation(showPosition);
             clickToStart.remove();
-
-            document.addEventListener("click", () => {
-                alert((enableParticles ? "Com" : "Sem") + " partículas.");
-                let particles = document.getElementById("particles");
-                enableParticles = !enableParticles;
-                particles.setAttribute("sprite-particles", { enable: enableParticles });
-            });
         });
     }
 });

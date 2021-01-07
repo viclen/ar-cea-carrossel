@@ -57,7 +57,14 @@
                     animation-mixer="clip: *">
                 </a-entity>
 
-                <a-entity id="drag"
+                <a-entity position="0 0 0">
+                    <a-entity
+                        sprite-particles="texture: url(img/star.png); depthWrite: true; alphaTest: 0.5; spawnRate: 2; lifeTime: 7; radialPosition: 1; orbitalVelocity: 150; velocityScale: 1; emitterColor: green">
+                    </a-entity>
+                    <a-text value="velocityScale orbital" mixin="label"></a-text>
+                </a-entity>
+
+                <!-- <a-entity id="drag"
                     animation="property: position; dur: 4500; to: 1 0 0; loop: -1; easing: linear; dir: alternate">
                 </a-entity>
                 <a-entity id="particles"
@@ -76,7 +83,7 @@
                         trailLifeTime: 1;
                         enable: true;
                     ">
-                </a-entity>
+                </a-entity> -->
 
                 <!-- <a-entity position="0 0 0">
                     <a-entity sprite-particles="
@@ -106,7 +113,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 12");
+        alert("Versão 13");
     </script>
 </body>
 

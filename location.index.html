@@ -59,7 +59,7 @@
                 
                 <a-entity position="0 0 0">
                     <a-entity id="particles"
-                        sprite-particles="texture: url(img/star.png); spawnRate: 3; lifeTime: 1..3; radialPosition: 1; orbitalVelocity: 350; velocityScale: 2; emitterColor: white; enable: true;">
+                        sprite-particles="texture: url(img/star.png); spawnRate: 3; lifeTime: 1..3; radialPosition: 1; orbitalVelocity: 150; velocityScale: 2; emitterColor: white; enable: true;">
                     </a-entity>
                 </a-entity>
 
@@ -102,7 +102,7 @@
             </a-entity>
         </a-entity>
 
-        <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
+        <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera
             raycaster="objects: .clickable; interval: 1000; near: 2; far: 20; direction: 0 0 -1"
             cursor="fuse: true; rayOrigin: mouse;">
         </a-entity>
@@ -111,7 +111,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 20");
+        alert("Versão 21");
 
         document.onmousemove = () => {};
     </script>

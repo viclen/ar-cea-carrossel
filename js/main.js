@@ -67,12 +67,12 @@ function createParticles() {
 
     document.getElementById("particles").innerHTML += `
         <a-entity sprite-particles="
-            spawnRate: 50;
+            spawnRate: 40;
             texture:  url(img/star.png);
             lifeTime: 1;
             trailLifeTime: 1;
             trailInterval: 0.1;
-            radialVelocity: 1..2;
+            radialVelocity: 2..10;
             opacity: 1,0;
             color: white;
             scale: 2;
@@ -83,5 +83,5 @@ function createParticles() {
     setTimeout(() => {
         canAdd = true;
         document.getElementById("particles").innerHTML = "";
-    }, 1000);
+    }, 2000);
 }

@@ -55,6 +55,8 @@ AFRAME.registerComponent('ar-scene', {
                 let particles = document.getElementById("particles");
                 particles.setAttribute("sprite-particles", { enable: true });
 
+                document.body.innerHTML += `<div class="fixed-front"></div>`;
+
                 setTimeout(() => {
                     particles.setAttribute("sprite-particles", { enable: false });
                 }, 1000);

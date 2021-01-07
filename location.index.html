@@ -50,6 +50,10 @@
 
     <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+        <a-assets>
+            <img id="star" src="./img/star.png">
+        </a-assets>
+
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
             <a-entity position="0 0 -10" rotation="0 0 0">
@@ -58,12 +62,17 @@
                 </a-entity>
             </a-entity>
 
-            <a-gltf-model id="model" texture="img/star.png" scale="0.5 0.5 0.5" visible="false"></a-gltf-model>
-            <a-entity position="0 5 -5"
-                sprite-particles="texture: img/star.png; velocity: .1 1 .1; acceleration: 0 -1 0..0 -2 0; color: red,yellow">
-            </a-entity>
-            <a-entity position="0 0 -5" sprite-particles="radialVelocity: 1..2; color: red"></a-entity>
+            <a-entity position="0 0 -5" sprite-particles="
+                lifeTime: 2..4; 
+                radialVelocity: 1..2; 
+                color: green; 
+                scale: 1..2,3,6,.5 .. 1,9;
+                trailType: ribbon3d;
+                spawnRate: 20;
+                spawnType: burst;
+                "></a-entity>
         </a-entity>
+        <!-- texture: #star; -->
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
             raycaster="objects: .clickable; interval: 1000; near: 2; far: 20; direction: 0 0 -1"
@@ -74,7 +83,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 8");
+        alert("Versão 9");
     </script>
 </body>
 

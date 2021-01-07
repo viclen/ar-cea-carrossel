@@ -58,24 +58,30 @@ AFRAME.registerComponent('ar-scene', {
     }
 });
 
+let canAdd = true;
+
 function createParticles() {
-    let particles = document.getElementById("particles");
-    const p = document.createElement("a-entity");
-    p.setAttribute("sprite-particles", {
-        spawnRate: 50,
-        texture: "url(img / star.png)",
-        lifeTime: 1,
-        trailLifeTime: 1,
-        trailInterval: 0.1,
-        radialVelocity: "1..2",
-        opacity: "1, 0",
-        color: white,
-        scale: 2,
-        spawnType: "burst",
-    });
-    particles.appendChild(p);
+    canAdd = false;
+
+    if (!canAdd) return;
+
+    document.getElementById("particles").innerHTML += `
+        <a-entity sprite-particles="
+            spawnRate: 50;
+            texture:  url(img/star.png);
+            lifeTime: 1;
+            trailLifeTime: 1;
+            trailInterval: 0.1;
+            radialVelocity: 1..2;
+            opacity: 1,0;
+            color: white;
+            scale: 2;
+            spawnType: burst;
+        "></a-entity>
+    `;
 
     setTimeout(() => {
-        p.remove();
+        canAdd = true;
+        document.getElementById("particles").innerHTML = "";
     }, 1000);
 }

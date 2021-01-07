@@ -59,7 +59,7 @@
 
                 <a-entity position="0 0 0">
                     <a-entity
-                        sprite-particles="texture: url(img/star.png); depthWrite: true; alphaTest: 0.5; spawnRate: 2; lifeTime: 7; radialPosition: 1; orbitalVelocity: 150; velocityScale: 1; emitterColor: green">
+                        sprite-particles="texture: url(img/star.png); trailLifeTime: 1; trailInterval: 0.1; depthWrite: true; alphaTest: 0.5; spawnRate: 10; lifeTime: 7; radialPosition: 1; orbitalVelocity: 150; velocityScale: 1; emitterColor: white">
                     </a-entity>
                 </a-entity>
 
@@ -90,8 +90,8 @@
                         texture: ;
                         lifeTime: 2..3;
                         trailLifeTime: 1;
-                        radialVelocity: 1..2;
                         trailInterval: 0.1;
+                        radialVelocity: 1..2;
                         opacity: 1,0;
                         color: white;
                         scale: 1,0.5;
@@ -100,7 +100,6 @@
                     </a-entity>
                 </a-entity> -->
             </a-entity>
-
         </a-entity>
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
@@ -112,7 +111,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 14");
+        alert("Versão 15");
     </script>
 </body>
 

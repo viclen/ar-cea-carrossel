@@ -66,13 +66,11 @@
                 lifeTime: 2..4; 
                 radialVelocity: 1..2; 
                 color: green; 
-                scale: 1..2,3,6,.5 .. 1,9;
-                trailType: ribbon3d;
+                scale: .5;
                 spawnRate: 20;
-                spawnType: burst;
+                texture: #star;
                 "></a-entity>
         </a-entity>
-        <!-- texture: #star; -->
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
             raycaster="objects: .clickable; interval: 1000; near: 2; far: 20; direction: 0 0 -1"
@@ -83,7 +81,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 9");
+        alert("Versão 10");
     </script>
 </body>
 

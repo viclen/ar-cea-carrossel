@@ -61,9 +61,9 @@ AFRAME.registerComponent('ar-scene', {
 let canAdd = true;
 
 function createParticles() {
-    canAdd = false;
-
     if (!canAdd) return;
+    
+    canAdd = false;
 
     document.getElementById("particles").innerHTML += `
         <a-entity sprite-particles="

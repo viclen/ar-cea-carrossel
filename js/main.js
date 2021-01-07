@@ -56,8 +56,7 @@ AFRAME.registerComponent('ar-scene', {
 
 let particles = document.getElementById("particles");
 let enableParticles = true;
-
-document.onclick = () => {
+document.addEventListener("click", () => {
     enableParticles = !enableParticles;
     particles.setAttribute("sprite-particles", { enable: enableParticles });
-};
+});

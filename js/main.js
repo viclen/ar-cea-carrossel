@@ -34,6 +34,8 @@ function showScreen(name) {
     screen.setAttribute('visible', 'true');
 }
 
+let enableParticles = true;
+
 AFRAME.registerComponent('ar-scene', {
     init: function () {
         if (!window.mobileCheck()) {
@@ -45,6 +47,12 @@ AFRAME.registerComponent('ar-scene', {
             return;
         }
 
+        document.onclick = () => {
+            let particles = document.getElementById("particles");
+            enableParticles = !enableParticles;
+            particles.setAttribute("sprite-particles", { enable: enableParticles });
+        });
+
         const clickToStart = document.getElementById('clickToStart');
 
         clickToStart.addEventListener('click', () => {
@@ -54,9 +62,3 @@ AFRAME.registerComponent('ar-scene', {
     }
 });
 
-let particles = document.getElementById("particles");
-let enableParticles = true;
-document.addEventListener("click", () => {
-    enableParticles = !enableParticles;
-    particles.setAttribute("sprite-particles", { enable: enableParticles });
-});

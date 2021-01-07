@@ -53,3 +53,11 @@ AFRAME.registerComponent('ar-scene', {
         });
     }
 });
+
+let particles = document.getElementById("particles");
+let enableParticles = true;
+
+document.onclick = () => {
+    enableParticles = !enableParticles;
+    particles.setAttribute("sprite-particles", { enable: enableParticles });
+};

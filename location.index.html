@@ -50,10 +50,6 @@
 
     <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        <a-assets>
-            <img id="star" src="./img/star.png">
-        </a-assets>
-
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
             <a-entity position="0 0 -10" rotation="0 0 0">
@@ -61,13 +57,21 @@
                     animation-mixer="clip: *">
                 </a-entity>
 
-                <a-entity position="0 0 0" sprite-particles="
-                    lifeTime: 2..10; 
-                    radialVelocity: 1..2; 
-                    color: #a4c503;
-                    scale: .5;
-                    spawnRate: 100;
-                "></a-entity>
+                <a-entity position="0 0 0">
+                    <a-entity id="particles" sprite-particles="
+                        spawnRate: 100;
+                        texture: url(img/blob.png);
+                        lifeTime: 2..3;
+                        trailLifeTime: 1;
+                        radialVelocity: 1..2;
+                        trailInterval: 0.1;
+                        opacity: 1,0;
+                        color: #a4c503,white;
+                        scale: 1,0.5;
+                        enable: true;
+                    ">
+                    </a-entity>
+                </a-entity>
             </a-entity>
 
         </a-entity>
@@ -81,7 +85,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 10");
+        alert("Versão 11");
     </script>
 </body>
 

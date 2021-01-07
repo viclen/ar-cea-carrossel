@@ -36,11 +36,11 @@ function showScreen(name) {
 
 let enableParticles = true;
 
-document.addEventListener("click", () => {
-    enableParticles = !enableParticles;
-    alert((enableParticles ? "Com" : "Sem") + " partículas.");
-    document.getElementById("particles").setAttribute("sprite-particles", { enable: enableParticles });
-});
+// document.addEventListener("click", () => {
+//     enableParticles = !enableParticles;
+//     alert((enableParticles ? "Com" : "Sem") + " partículas.");
+//     document.getElementById("particles").setAttribute("sprite-particles", { enable: enableParticles });
+// });
 
 AFRAME.registerComponent('ar-scene', {
     init: function () {

@@ -27,7 +27,7 @@
       <a-entity visible="true" id="screen" rotation="-90 360 0">
         <a-entity position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
         </a-entity>
-        
+
         <a-entity id="drag" animation="property: position; dur: 4500; to: 1 0 0; loop: -1; easing: linear; dir: alternate">
         </a-entity>
         <a-entity id="particles" sprite-particles="
@@ -35,15 +35,14 @@
             texture: url(img/star.png);
             spawnRate: 20;
             radialType: sphere;
-            radialAcceleration: 10;
+            radialVelocity: 1..2;
             emitterColor: white;
             drag: 1;
-            velocityScale: 0.7;
             scale: 2;
-            trailInterval: 0.1;
             lifeTime: 2..3;
+            trailInterval: 0.1;
             trailLifeTime: 1;
-            enable: true;
+            enable: false;
         ">
         </a-entity>
       </a-entity>

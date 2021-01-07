@@ -52,14 +52,30 @@ AFRAME.registerComponent('ar-scene', {
             clickToStart.remove();
 
             document.addEventListener("click", () => {
-                let particles = document.getElementById("particles");
-                particles.setAttribute("sprite-particles", { enable: true });
-
-                setTimeout(() => {
-                    particles.setAttribute("sprite-particles", { enable: false });
-                }, 1000);
+                createParticles();
             });
         });
     }
 });
 
+function createParticles() {
+    let particles = document.getElementById("particles");
+    const p = document.createElement("a-entity");
+    p.setAttribute("sprite-particles", {
+        spawnRate: 50,
+        texture: "url(img / star.png)",
+        lifeTime: 1,
+        trailLifeTime: 1,
+        trailInterval: 0.1,
+        radialVelocity: "1..2",
+        opacity: "1, 0",
+        color: white,
+        scale: 2,
+        spawnType: "burst",
+    });
+    particles.appendChild(p);
+
+    setTimeout(() => {
+        p.remove();
+    }, 1000);
+}

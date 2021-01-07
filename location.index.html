@@ -60,16 +60,16 @@
                 <a-entity position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)"
                     animation-mixer="clip: *">
                 </a-entity>
+
+                <a-entity position="0 0 0" sprite-particles="
+                    lifeTime: 2..10; 
+                    radialVelocity: 1..2; 
+                    color: #a4c503;
+                    scale: .5;
+                    spawnRate: 100;
+                "></a-entity>
             </a-entity>
 
-            <a-entity position="0 0 -5" sprite-particles="
-                lifeTime: 2..4; 
-                radialVelocity: 1..2; 
-                color: green; 
-                scale: .5;
-                spawnRate: 20;
-                texture: #star;
-                "></a-entity>
         </a-entity>
 
         <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls

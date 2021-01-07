@@ -50,10 +50,9 @@
 
     <a-scene id="arScene" ar-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        
         <a-assets>
             <img id="star" src="./img/star.png">
-        </assets>
+        </a-assets >
 
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
@@ -63,6 +62,7 @@
                 </a-entity>
             </a-entity>
 
+            <a-gltf-model id="model" texture="#star" scale="0.1 0.1 0.1" visible="false"></a-gltf-model>
             <a-entity position="0 5 -5"
                 sprite-particles="velocity: .1 1 .1; acceleration: 0 -1 0..0 -2 0; color: green">
             </a-entity>
@@ -80,7 +80,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 5");
+        alert("Versão 7");
     </script>
 </body>
 

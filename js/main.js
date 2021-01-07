@@ -47,17 +47,17 @@ AFRAME.registerComponent('ar-scene', {
             return;
         }
 
-        // document.addEventListener("click", () => {
-        //     let particles = document.getElementById("particles");
-        //     enableParticles = !enableParticles;
-        //     particles.setAttribute("sprite-particles", { enable: enableParticles });
-        // });
-
         const clickToStart = document.getElementById('clickToStart');
 
         clickToStart.addEventListener('click', () => {
             getLocation(showPosition);
             clickToStart.remove();
+
+            document.addEventListener("click", () => {
+                let particles = document.getElementById("particles");
+                enableParticles = !enableParticles;
+                particles.setAttribute("sprite-particles", { enable: enableParticles });
+            });
         });
     }
 });

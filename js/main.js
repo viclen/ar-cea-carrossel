@@ -54,7 +54,7 @@ AFRAME.registerComponent('ar-scene', {
             document.addEventListener("click", () => {
                 createParticles();
             });
-            
+
             document.getElementById("carregando").style.display = "";
         });
     }
@@ -63,7 +63,7 @@ AFRAME.registerComponent('ar-scene', {
 AFRAME.registerComponent('3dmodel', {
     init: function () {
         this.el.addEventListener('model-loaded', e => {
-            document.getElementById("carregando").style.display = "none";
+            document.getElementById("carregando").innerHTML = "";
         })
     }
 })
@@ -72,8 +72,6 @@ AFRAME.registerComponent('3dmodel', {
 let canAdd = true;
 
 function createParticles() {
-    alert("Clickou");
-
     if (!canAdd) return;
 
     canAdd = false;

@@ -72,6 +72,8 @@ AFRAME.registerComponent('3dmodel', {
 let canAdd = true;
 
 function createParticles() {
+    alert("Clickou");
+
     if (!canAdd) return;
 
     canAdd = false;

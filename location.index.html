@@ -62,6 +62,8 @@
         <a-entity visible="false" look-at="[gps-camera]" id="objects" smooth="true" smoothCount="10"
             smoothTolerance=".1" smoothThreshold="5">
             <a-entity position="0 0 -10" rotation="0 0 0">
+                <a-entity id="particles" position="0 0 0"></a-entity>
+
                 <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
                     gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
                 </a-entity>
@@ -79,8 +81,6 @@
                         sprite-particles="texture: url(img/star.png); spawnRate: 30; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 50">
                     </a-entity>
                 </a-entity>
-
-                <a-entity id="particles" position="0 0 0"></a-entity>
             </a-entity>
         </a-entity>
 

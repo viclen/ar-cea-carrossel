@@ -65,21 +65,21 @@
                 <a-entity id="particles" position="0 0 0">
                 </a-entity>
 
-                <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
+                <!-- <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
                     gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
-                </a-entity>
-
-                <!-- <a-entity position="0 2 0">
-                    <a-obj-model id="logo-model" scale="1 1 1" src="models/bradesco.obj" visible="true"></a-obj-model>
-                    <a-entity rotation="0 180 0" position="0 0 0"
-                        sprite-particles="model: #logo-model; modelFill: triangle; texture: url(img/star.png); spawnRate: 400; lifeTime: 5; particleSize: 10">
-                    </a-entity>
                 </a-entity> -->
 
                 <a-entity position="0 0 0">
-                    <a-entity
-                        sprite-particles="texture: url(img/star.png); spawnRate: 50; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 50">
+                    <a-obj-model 3dmodel id="logo-model" scale="1 1 1" src="models/bradesco.obj" visible="true"></a-obj-model>
+                    <a-entity rotation="0 0 0" position="0 0 0"
+                        sprite-particles="model: #logo-model; modelFill: triangle; texture: url(img/star.png); spawnRate: 400; lifeTime: 5; particleSize: 50">
                     </a-entity>
+                </a-entity>
+
+                <a-entity position="0 0 0">
+                    <!-- <a-entity
+                        sprite-particles="texture: url(img/star.png); spawnRate: 50; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 50">
+                    </a-entity> -->
 
                     <!-- <a-entity
                         sprite-particles="texture: url(img/star.png); spawnRate: 4; lifeTime: 1..4; radialPosition: 1; orbitalVelocity: 150; velocityScale: 2; emitterColor: white;">
@@ -97,7 +97,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 35");
+        alert("Versão 36");
     </script>
 </body>
 

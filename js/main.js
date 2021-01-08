@@ -85,8 +85,8 @@ function createParticles() {
             radialAcceleration: -2;
             opacity: 1,0;
             color: white;
-            scale: 2;
             spawnType: burst;
+            particleSize: 50;
         "></a-entity>
     `;
 

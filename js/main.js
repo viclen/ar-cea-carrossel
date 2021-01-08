@@ -80,19 +80,19 @@ function createParticles() {
         <a-entity sprite-particles="
             spawnRate: 30;
             texture: url(img/star.png);
-            lifeTime: 2;
-            radialVelocity: 4..7;
+            lifeTime: 10;
+            radialVelocity: 4..6;
             radialAcceleration: -2;
             opacity: 1,0;
             color: white;
             spawnType: burst;
-            scale: 2;
+            scale: 4;
         "></a-entity>
     `;
 
     setTimeout(() => {
-        canAdd = true;
         document.getElementById("particles").innerHTML = "";
+        canAdd = true;
     }, 2000);
 }
 

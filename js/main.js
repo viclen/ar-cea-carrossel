@@ -83,11 +83,11 @@ function createParticles() {
             spawnRate: 30;
             texture: url(img/star.png);
             lifeTime: 10;
-            radialVelocity: 4..6;
-            radialAcceleration: -2;
+            radialVelocity: 3..6;
+            radialAcceleration: -1.5;
             opacity: 1,0;
             color: white;
-            scale: 2;
+            scale: 4;
             spawnType: burst;
         "></a-entity>
     `;

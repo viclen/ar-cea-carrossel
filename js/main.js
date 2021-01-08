@@ -51,6 +51,8 @@ AFRAME.registerComponent('ar-scene', {
             getLocation(showPosition);
             clickToStart.remove();
 
+            document.getElementById("carregando").style.display = "";
+
             document.addEventListener("click", () => {
                 createParticles();
             });
@@ -78,8 +80,8 @@ function createParticles() {
         <a-entity sprite-particles="
             spawnRate: 30;
             texture: url(img/star.png);
-            lifeTime: 10;
-            radialVelocity: 3..6;
+            lifeTime: 2;
+            radialVelocity: 4..7;
             radialAcceleration: -2;
             opacity: 1,0;
             color: white;

@@ -78,11 +78,11 @@ function createParticles() {
 
     document.getElementById("particles").innerHTML = `
         <a-entity sprite-particles="
-            spawnRate: 30;
+            spawnRate: 20;
             texture: url(img/star.png);
-            lifeTime: 10;
-            radialVelocity: 3..6;
-            radialAcceleration: -1.5;
+            lifeTime: 2;
+            radialVelocity: 2..6;
+            radialAcceleration: -1;
             opacity: 1,0;
             color: white;
             scale: 4;

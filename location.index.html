@@ -44,7 +44,12 @@
 <body style="margin: 0; overflow: hidden;">
     <img src="img/logo.png" class="logo">
 
-    <div class="fixed-front"></div>
+    <div class="fixed-front">
+        <div class="text" id="carregando">
+            Carregando...<br>
+            Por favor espere
+        </div>
+    </div>
 
     <div class="fixed-front" id="clickToStart">
         <div class="text">
@@ -73,7 +78,7 @@
 
                 <a-entity position="0 0 0">
                     <a-entity
-                        sprite-particles="texture: url(img/star.png); lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false;">
+                        sprite-particles="texture: url(img/star.png); spawnRate: 50; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 1">
                     </a-entity>
 
                     <!-- <a-entity
@@ -92,7 +97,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 33");
+        alert("Versão 34");
     </script>
 </body>
 

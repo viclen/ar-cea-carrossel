@@ -61,7 +61,7 @@ AFRAME.registerComponent('ar-scene', {
 AFRAME.registerComponent('3dmodel', {
     init: function () {
         this.el.addEventListener('model-loaded', e => {
-            alert('Model loaded');
+            document.getElementById("carregando").remove();
         })
     }
 })
@@ -76,10 +76,10 @@ function createParticles() {
 
     document.getElementById("particles").innerHTML += `
         <a-entity sprite-particles="
-            spawnRate: 50;
+            spawnRate: 30;
             texture: url(img/star.png);
-            lifeTime: 100;
-            radialVelocity: 4;
+            lifeTime: 10;
+            radialVelocity: 3..6;
             radialAcceleration: -2;
             opacity: 1,0;
             color: white;

@@ -86,7 +86,7 @@ function createParticles() {
             opacity: 1,0;
             color: white;
             spawnType: burst;
-            particleSize: 50;
+            scale: 2;
         "></a-entity>
     `;
 
@@ -97,32 +97,32 @@ function createParticles() {
 }
 
 
-let showingLogo = false;
-setInterval(() => {
-    showingLogo = !showingLogo;
+// let showingLogo = false;
+// setInterval(() => {
+//     showingLogo = !showingLogo;
 
-    const el = document.getElementById("model-particles");
+//     const el = document.getElementById("model-particles");
 
-    if(showingLogo){
-        el.setAttribute("particles", {
-            model: "#logo-model",
-            modelFill: "triangle",
-            texture: "url(img/star.png)",
-            spawnRate: "400",
-            lifeTime: "1",
-            opacity: "1,0",
-            scale: "2",
-        });
-    }else{
-        el.setAttribute("particles", {
-            texture: url(img / star.png),
-            spawnRate: "50",
-            lifeTime: "1..10",
-            opacity: "0, 1, 1, 0",
-            position: "-5 - 5 - 5.. 5 5 5",
-            velocity: "-.2 - .2 - .2.. .2 .2 .2",
-            usePerspective: "false",
-            particleSize: "50",
-        });
-    }
-}, 5000);
+//     if(showingLogo){
+//         el.setAttribute("particles", {
+//             model: "#logo-model",
+//             modelFill: "triangle",
+//             texture: "url(img/star.png)",
+//             spawnRate: "400",
+//             lifeTime: "1",
+//             opacity: "1,0",
+//             scale: "2",
+//         });
+//     }else{
+//         el.setAttribute("particles", {
+//             texture: url(img / star.png),
+//             spawnRate: "50",
+//             lifeTime: "1..10",
+//             opacity: "0, 1, 1, 0",
+//             position: "-5 - 5 - 5.. 5 5 5",
+//             velocity: "-.2 - .2 - .2.. .2 .2 .2",
+//             usePerspective: "false",
+//             particleSize: "50",
+//         });
+//     }
+// }, 5000);

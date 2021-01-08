@@ -65,25 +65,21 @@
                 <a-entity id="particles" position="0 0 0">
                 </a-entity>
 
-                <!-- <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
+                <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
                     gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
-                </a-entity> -->
+                </a-entity>
 
-                <a-entity position="0 5 0">
+                <a-entity position="0 3 0">
                     <a-obj-model 3dmodel id="logo-model" rotation="90 0 0" scale="6 6 6" src="models/bradesco.obj" visible="false"></a-obj-model>
-                    <a-entity id="model-particles" rotation="90 0 0" position="0 0 0"
-                        sprite-particles="model: #logo-model; modelFill: triangle; texture: url(img/star.png); spawnRate: 400; lifeTime: 1; opacity: 1,0; scale: 2;">
+                    <a-entity rotation="90 0 0" position="0 0 0"
+                        sprite-particles="model: #logo-model; modelFill: triangle; texture: url(img/star.png); spawnRate: 400; lifeTime: 1; opacity: 1,0; scale: 3;">
                     </a-entity>
                 </a-entity>
 
                 <a-entity position="0 0 0">
-                    <!-- <a-entity
+                    <a-entity
                         sprite-particles="texture: url(img/star.png); spawnRate: 50; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 50">
-                    </a-entity> -->
-
-                    <!-- <a-entity
-                        sprite-particles="texture: url(img/star.png); spawnRate: 4; lifeTime: 1..4; radialPosition: 1; orbitalVelocity: 150; velocityScale: 2; emitterColor: white;">
-                    </a-entity> -->
+                    </a-entity>
                 </a-entity>
             </a-entity>
         </a-entity>
@@ -97,7 +93,7 @@
     </a-scene>
 
     <script>
-        alert("Versão 43");
+        alert("Versão 44");
     </script>
 </body>
 

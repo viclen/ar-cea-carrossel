@@ -17,6 +17,8 @@
     src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-sprite-particles-component@^0.5.0/aframe-sprite-particles-component.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 
@@ -25,11 +27,11 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     <a-marker preset="hiro" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
       <a-entity visible="true" id="screen" rotation="-90 360 0">
-        <a-entity position="0 0 -10" rotation="0 0 0">
+        <a-entity position="0 0 0" rotation="0 0 0">
           <a-entity id="particles" position="0 0 0"></a-entity>
 
-          <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
-            gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
+          <a-entity 3dmodel position="0 0 0" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)"
+            animation-mixer="clip: *">
           </a-entity>
 
           <a-entity position="0 3 0">

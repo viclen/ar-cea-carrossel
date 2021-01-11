@@ -25,42 +25,38 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     <a-marker preset="hiro" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
       <a-entity visible="true" id="screen" rotation="-90 360 0">
-        <a-entity position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01" gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
-        </a-entity>
+        <a-entity position="0 0 -10" rotation="0 0 0">
+          <a-entity id="particles" position="0 0 0"></a-entity>
 
-        <a-entity id="drag" animation="property: position; dur: 4500; to: 1 0 0; loop: -1; easing: linear; dir: alternate">
-        </a-entity>
-        <a-entity id="particles" sprite-particles="
-            source: #drag;
-            texture: url(img/star.png);
-            spawnRate: 20;
-            radialType: sphere;
-            radialVelocity: 1..2;
-            emitterColor: white;
-            drag: 1;
-            scale: 2;
-            lifeTime: 2..3;
-            trailInterval: 0.1;
-            trailLifeTime: 1;
-            enable: false;
-        ">
+          <a-entity 3dmodel position="0 0 -10" rotation="0 0 0" scale="0.01 0.01 0.01"
+            gltf-model="url(models/bees.gltf)" animation-mixer="clip: *">
+          </a-entity>
+
+          <a-entity position="0 3 0">
+            <a-obj-model 3dmodel id="logo-model" rotation="90 0 0" scale="6 6 6" src="models/bradesco.obj"
+              visible="false">
+            </a-obj-model>
+            <a-entity rotation="90 0 0" position="0 0 0"
+              sprite-particles="model: #logo-model; modelFill: triangle; texture: url(img/star.png); spawnRate: 400; lifeTime: 1; opacity: 1,0; scale: 4;">
+            </a-entity>
+          </a-entity>
+
+          <a-entity position="0 -1 0">
+            <a-entity
+              sprite-particles="texture: url(img/star.png); spawnRate: 30; lifeTime: 1..10; opacity: 0,1,1,0; position: -5 -5 -5.. 5 5 5; velocity: -.2 -.2 -.2.. .2 .2 .2; usePerspective: false; particleSize: 50">
+            </a-entity>
+          </a-entity>
         </a-entity>
       </a-entity>
     </a-marker>
 
-    <a-entity camera raycaster="objects: .cantap" cursor="fuse: false; rayOrigin: mouse;" wasd-controls-enabled="false"
-      position="" rotation="" look-controls="" wasd-controls="">
+    <a-entity camera id="camera" wasd-controls-enabled="false" rotation-reader gps-camera look-controls
+      raycaster="objects: .clickable; interval: 1000; near: 2; far: 20; direction: 0 0 -1"
+      cursor="fuse: true; rayOrigin: mouse;">
     </a-entity>
 
-    <canvas class="a-canvas a-grab-cursor a-mouse-cursor-hover" data-aframe-canvas="true" width="1204"
-      height="980"></canvas>
-
-    <a-light type="ambient" intensity="1" light=""></a-light>
+    <a-light type="ambient" color="#FFF" intensity="2"></a-light>
   </a-scene>
-
-  <script>
-    alert("Versão 3");
-  </script>
 </body>
 
 </html>

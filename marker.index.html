@@ -20,7 +20,15 @@
     src="https://unpkg.com/aframe-sprite-particles-component@^0.5.0/aframe-sprite-particles-component.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-  <script src="./js/main.js?9896"></script>
+  <script>
+    AFRAME.registerComponent('3dmodel', {
+      init: function () {
+        this.el.addEventListener('model-loaded', e => {
+          document.getElementById("carregando").innerHTML = "";
+        })
+      }
+    })
+  </script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -45,7 +53,7 @@
           </a-entity>
 
           <a-entity position="0 3 0">
-            <a-obj-model 3dmodel id="logo-model" rotation="90 0 0" scale="6 6 6" src="models/bradesco.obj"
+            <a-obj-model id="logo-model" rotation="90 0 0" scale="6 6 6" src="models/bradesco.obj"
               visible="false">
             </a-obj-model>
             <a-entity rotation="90 0 0" position="0 0 0"
@@ -70,7 +78,38 @@
     <a-light type="ambient" color="#FFF" intensity="2"></a-light>
 
     <script>
-      alert("Versao 4");
+      alert("Versao 5");
+
+      document.addEventListener("click", () => {
+        createParticles();
+      });
+
+      let canAdd = true;
+
+      function createParticles() {
+        if (!canAdd) return;
+
+        canAdd = false;
+
+        document.getElementById("particles").innerHTML = `
+        <a-entity sprite-particles="
+            spawnRate: 30;
+            texture: url(img/star.png);
+            lifeTime: 1..5;
+            radialVelocity: 2..6;
+            radialAcceleration: -1;
+            opacity: 1,0;
+            color: white;
+            scale: 4;
+            spawnType: burst;
+        "></a-entity>
+    `;
+
+        setTimeout(() => {
+          document.getElementById("particles").innerHTML = "";
+          canAdd = true;
+        }, 2000);
+      }
     </script>
   </a-scene>
 </body>

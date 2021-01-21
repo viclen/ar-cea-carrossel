@@ -118,18 +118,18 @@ AFRAME.registerComponent('camera-data', {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
-            const newPosition = {
-                x: position.x + lastMotion.x,
-                y: position.y + lastMotion.y,
-                z: position.z + lastMotion.z
-            };
+            // const newPosition = {
+            //     x: position.x + lastMotion.x,
+            //     y: position.y + lastMotion.y,
+            //     z: position.z + lastMotion.z
+            // };
 
-            this.el.object3D.position.set(newPosition.x, newPosition.y, newPosition.z);
+            // this.el.object3D.position.set(newPosition.x, newPosition.y, newPosition.z);
 
             document.getElementById("cameraPosition").innerHTML = `
-                ${newPosition.x},
-                ${newPosition.y},
-                ${newPosition.z}
+                ${position.x},
+                ${position.y},
+                ${position.z}
                 <br />
                 ${lastMotion.x},
                 ${lastMotion.y},

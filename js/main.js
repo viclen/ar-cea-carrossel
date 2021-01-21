@@ -36,6 +36,8 @@ function showScreen(name) {
 
 AFRAME.registerComponent('ar-scene', {
     init: function () {
+        window.addEventListener("devicemotion", onMoveDevice);
+        
         if (!window.mobileCheck()) {
             document.getElementById("clickToStart").innerHTML = `
                 <img src="./img/qr-code.png" />
@@ -48,8 +50,6 @@ AFRAME.registerComponent('ar-scene', {
         const clickToStart = document.getElementById('clickToStart');
 
         clickToStart.addEventListener('click', () => {
-            window.addEventListener("devicemotion", onMoveDevice);
-
             getLocation(showPosition);
             clickToStart.remove();
 
@@ -70,13 +70,16 @@ AFRAME.registerComponent('3dmodel', {
     }
 });
 
+let lastMotion = { x: 0, y: 0, x: 0 };
+
 function onMoveDevice(event) {
     let acl = event.acceleration;
-    document.getElementById("cameraPosition").innerHTML = `
-        ${Math.round(acl.x)},
-        ${Math.round(acl.y)},
-        ${Math.round(acl.z)}
-    `;
+
+    lastMotion = {
+        x: Math.round(acl.x * 100) / 100,
+        y: Math.round(acl.y * 100) / 100,
+        z: Math.round(acl.z * 100) / 100
+    }
 }
 
 let canAdd = true;
@@ -106,8 +109,6 @@ function createParticles() {
     }, 2000);
 }
 
-let lastPosition;
-
 AFRAME.registerComponent('camera-data', {
     tick: (function () {
         const position = new THREE.Vector3();
@@ -117,15 +118,11 @@ AFRAME.registerComponent('camera-data', {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
-            if (lastPosition) {
-
-            }
-
-            // document.getElementById("cameraPosition").innerHTML = `
-            //     ${Math.round(position.x)},
-            //     ${Math.round(position.y)},
-            //     ${Math.round(position.z)}
-            // `;
+            document.getElementById("cameraPosition").innerHTML = `
+                ${position.x + lastMotion.x},
+                ${position.y + lastMotion.y},
+                ${position.z + lastMotion.z}
+            `;
 
             document.getElementById("cameraRotation").innerHTML = `
                 ${Math.round(quaternion.x * 180)},

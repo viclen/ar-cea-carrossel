@@ -99,6 +99,19 @@ function createParticles() {
 let lastPosition;
 
 AFRAME.registerComponent('camera-data', {
+    init: function () {
+        let acl = new Accelerometer({ frequency: 60 });
+
+        acl.addEventListener('reading', () => {
+            document.getElementById("cameraPosition").innerHTML = `
+                ${Math.round(acl.x)},
+                ${Math.round(acl.y)},
+                ${Math.round(acl.z)}
+            `;
+        });
+
+        acl.start();
+    },
     tick: (function () {
         const position = new THREE.Vector3();
         const quaternion = new THREE.Quaternion();

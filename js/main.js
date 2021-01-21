@@ -98,15 +98,20 @@ function createParticles() {
 
 AFRAME.registerComponent('camera-data', {
     tick: (function () {
-        var position = new THREE.Vector3();
-        var quaternion = new THREE.Quaternion();
+        const position = new THREE.Vector3();
+        const quaternion = new THREE.Quaternion();
+        const rotation = new THREE.Euler();
 
         return function () {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
-            // position and rotation now contain vector and quaternion in world space.
+            
+            rotation.setFromQuaternion(quaternion)
+
             document.getElementById("cameraData").innerHTML = `
-                ${JSON.stringify(quaternion)}
+                ${rotation.x} <br />
+                ${rotation.y} <br />
+                ${rotation.z}
             `;
         };
     })()

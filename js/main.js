@@ -48,9 +48,6 @@ AFRAME.registerComponent('ar-scene', {
         const clickToStart = document.getElementById('clickToStart');
 
         clickToStart.addEventListener('click', () => {
-            if (DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === "function") {
-                DeviceMotionEvent.requestPermission();
-            }
             window.addEventListener("devicemotion", onMoveDevice);
 
             getLocation(showPosition);
@@ -117,20 +114,18 @@ AFRAME.registerComponent('camera-data', {
         const quaternion = new THREE.Quaternion();
 
         return function () {
-            // this.el.object3D.getWorldPosition(position);
-            this.el.object3D.updateMatrixWorld();
-            position.setFromMatrixPosition(this.el.object3D.matrixWorld);
+            this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
             if (lastPosition) {
 
             }
 
-            document.getElementById("cameraPosition").innerHTML = `
-                ${Math.round(position.x)},
-                ${Math.round(position.y)},
-                ${Math.round(position.z)}
-            `;
+            // document.getElementById("cameraPosition").innerHTML = `
+            //     ${Math.round(position.x)},
+            //     ${Math.round(position.y)},
+            //     ${Math.round(position.z)}
+            // `;
 
             document.getElementById("cameraRotation").innerHTML = `
                 ${Math.round(quaternion.x * 180)},

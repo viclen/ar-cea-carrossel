@@ -112,10 +112,10 @@ AFRAME.registerComponent('camera-data', {
 
             }
 
-            document.getElementById("cameraRotation").innerHTML = `
-                ${Math.round(position.x * 180)},
-                ${Math.round(position.y * 180)},
-                ${Math.round(position.z * 180)}
+            document.getElementById("cameraPosition").innerHTML = `
+                ${Math.round(position.x)},
+                ${Math.round(position.y)},
+                ${Math.round(position.z)}
             `;
 
             document.getElementById("cameraRotation").innerHTML = `

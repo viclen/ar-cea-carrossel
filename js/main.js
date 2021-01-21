@@ -130,6 +130,10 @@ AFRAME.registerComponent('camera-data', {
                 ${newPosition.x},
                 ${newPosition.y},
                 ${newPosition.z}
+                <br />
+                ${lastMotion.x},
+                ${lastMotion.y},
+                ${lastMotion.z}
             `;
 
             document.getElementById("cameraRotation").innerHTML = `

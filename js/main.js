@@ -70,15 +70,15 @@ AFRAME.registerComponent('3dmodel', {
     }
 });
 
-let lastMotion = { x: 0, y: 0, x: 0 };
+let lastMotion = { x: 0, y: 0, z: 0 };
 
 function onMoveDevice(event) {
     let acl = event.acceleration;
 
     lastMotion = {
-        x: Math.round(acl.x * 100) / 100,
-        y: Math.round(acl.y * 100) / 100,
-        z: Math.round(acl.z * 100) / 100
+        x: Math.round(acl.x * 10) / 10,
+        y: Math.round(acl.y * 10) / 10,
+        z: Math.round(acl.z * 10) / 10
     }
 }
 
@@ -118,18 +118,18 @@ AFRAME.registerComponent('camera-data', {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
-            // const newPosition = {
-            //     x: position.x + lastMotion.x,
-            //     y: position.y + lastMotion.y,
-            //     z: position.z + lastMotion.z
-            // };
+            const newPosition = {
+                x: position.x + lastMotion.x,
+                y: position.y + lastMotion.y,
+                z: position.z + lastMotion.z
+            };
 
             // this.el.object3D.position.set(newPosition.x, newPosition.y, newPosition.z);
 
             document.getElementById("cameraPosition").innerHTML = `
-                ${position.x},
-                ${position.y},
-                ${position.z}
+                ${newPosition.x},
+                ${newPosition.y},
+                ${newPosition.z}
                 <br />
                 ${lastMotion.x},
                 ${lastMotion.y},

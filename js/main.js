@@ -96,33 +96,18 @@ function createParticles() {
     }, 2000);
 }
 
+AFRAME.registerComponent('camera-data', {
+    tick: (function () {
+        var position = new THREE.Vector3();
+        var quaternion = new THREE.Quaternion();
 
-// let showingLogo = false;
-// setInterval(() => {
-//     showingLogo = !showingLogo;
-
-//     const el = document.getElementById("model-particles");
-
-//     if(showingLogo){
-//         el.setAttribute("particles", {
-//             model: "#logo-model",
-//             modelFill: "triangle",
-//             texture: "url(img/star.png)",
-//             spawnRate: "400",
-//             lifeTime: "1",
-//             opacity: "1,0",
-//             scale: "2",
-//         });
-//     }else{
-//         el.setAttribute("particles", {
-//             texture: url(img / star.png),
-//             spawnRate: "50",
-//             lifeTime: "1..10",
-//             opacity: "0, 1, 1, 0",
-//             position: "-5 - 5 - 5.. 5 5 5",
-//             velocity: "-.2 - .2 - .2.. .2 .2 .2",
-//             usePerspective: "false",
-//             particleSize: "50",
-//         });
-//     }
-// }, 5000);
+        return function () {
+            this.el.object3D.getWorldPosition(position);
+            this.el.object3D.getWorldQuaternion(quaternion);
+            // position and rotation now contain vector and quaternion in world space.
+            document.getElementById("cameraData").innerHTML = `
+                ${JSON.stringify(quaternion)}
+            `;
+        };
+    })()
+});

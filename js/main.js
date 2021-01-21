@@ -102,10 +102,11 @@ AFRAME.registerComponent('camera-data', {
     tick: (function () {
         const position = new THREE.Vector3();
         const quaternion = new THREE.Quaternion();
-        // const rotation = new THREE.Euler();
 
         return function () {
-            this.el.object3D.getWorldPosition(position);
+            // this.el.object3D.getWorldPosition(position);
+            this.el.object3D.updateMatrixWorld();
+            position.setFromMatrixPosition(this.el.object3D.matrixWorld);
             this.el.object3D.getWorldQuaternion(quaternion);
 
             if (lastPosition) {

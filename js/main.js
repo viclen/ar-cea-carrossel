@@ -96,22 +96,28 @@ function createParticles() {
     }, 2000);
 }
 
+let lastPosition;
+
 AFRAME.registerComponent('camera-data', {
     tick: (function () {
         const position = new THREE.Vector3();
         const quaternion = new THREE.Quaternion();
-        const rotation = new THREE.Euler();
+        // const rotation = new THREE.Euler();
 
         return function () {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
+
+            if (lastPosition){
+                
+            }
             
-            rotation.setFromQuaternion(quaternion)
+            // rotation.setFromQuaternion(quaternion);
 
             document.getElementById("cameraData").innerHTML = `
-                ${rotation.x} <br />
-                ${rotation.y} <br />
-                ${rotation.z}
+                ${Math.round(quaternion.x * 360)} <br />
+                ${Math.round(quaternion.y * 360)} <br />
+                ${Math.round(quaternion.z * 360)}
             `;
         };
     })()

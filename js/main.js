@@ -108,16 +108,20 @@ AFRAME.registerComponent('camera-data', {
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
-            if (lastPosition){
-                
-            }
-            
-            // rotation.setFromQuaternion(quaternion);
+            if (lastPosition) {
 
-            document.getElementById("cameraData").innerHTML = `
-                ${Math.round(quaternion.x * 360)} <br />
-                ${Math.round(quaternion.y * 360)} <br />
-                ${Math.round(quaternion.z * 360)}
+            }
+
+            document.getElementById("cameraRotation").innerHTML = `
+                ${Math.round(position.x * 180)},
+                ${Math.round(position.y * 180)},
+                ${Math.round(position.z * 180)}
+            `;
+
+            document.getElementById("cameraRotation").innerHTML = `
+                ${Math.round(quaternion.x * 180)},
+                ${Math.round(quaternion.y * 180)},
+                ${Math.round(quaternion.z * 180)}
             `;
         };
     })()

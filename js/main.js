@@ -37,7 +37,7 @@ function showScreen(name) {
 AFRAME.registerComponent('ar-scene', {
     init: function () {
         window.addEventListener("devicemotion", onMoveDevice);
-        
+
         if (!window.mobileCheck()) {
             document.getElementById("clickToStart").innerHTML = `
                 <img src="./img/qr-code.png" />
@@ -115,13 +115,15 @@ AFRAME.registerComponent('camera-data', {
         const quaternion = new THREE.Quaternion();
 
         return function () {
+            this.el.object3D.set(position.x + lastMotion.x, position.y + lastMotion.y, position.z + lastMotion.z);
+
             this.el.object3D.getWorldPosition(position);
             this.el.object3D.getWorldQuaternion(quaternion);
 
             document.getElementById("cameraPosition").innerHTML = `
-                ${position.x + lastMotion.x},
-                ${position.y + lastMotion.y},
-                ${position.z + lastMotion.z}
+                ${position.x},
+                ${position.y},
+                ${position.z}
             `;
 
             document.getElementById("cameraRotation").innerHTML = `
